@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 
 class Rating(models.TextChoices):
@@ -37,9 +38,11 @@ class Review(models.Model):
     description = models.TextField()
 
     sounds_like = models.CharField(
-        max_length=120,
-        blank = True
+        max_length=120, blank=True
     )  # TODO add functionality to link to another band.
 
     def __str__(self):
         return self.band_name
+
+    def get_absolute_url(self):
+        return reverse("band", args=[str(self.id)])

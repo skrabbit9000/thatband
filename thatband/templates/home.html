@@ -2,7 +2,7 @@
 {% block content %}
     {% for band in object_list %}
         <div>
-            <h2>{{ band.band_name }} -> {{ band.rating }}</h2>
+            <h2><a href="{% url 'band' band.pk %}">{{ band.band_name }}</a> -> {{ band.get_rating_display }}</h2>
         </div>
     {% endfor %}
 {% endblock content %}

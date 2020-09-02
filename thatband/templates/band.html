@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+<div>
+    <h2>{{ object.band_name }}</h2>
+    <p>{{ object.get_rating_display }}</p>
+    <p>{{ object.get_genre_display }}</p>
+    <p>{{ object.description }}</p>
+    <p>{{ object.sounds_like }}</p>
+</div>
+{% endblock content %}

@@ -8,6 +8,9 @@
     <header>
         <h1><a href="{% url 'home' %}">That Band</a></h1>
     </header>
+    {% if view.template_name != 'add_band.html' %}
+        <div><a href="{% url 'add_band' %}">Add Band</a></div>
+    {% endif %}
     <div>
         {% block content %}
         {% endblock content %}
