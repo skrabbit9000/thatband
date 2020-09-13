@@ -1,8 +1,21 @@
 {% extends 'base.html' %}
 {% block content %}
-    {% for band in object_list %}
-        <div>
-            <h2><a href="{% url 'band' band.pk %}">{{ band.band_name }}</a> -> {{ band.get_rating_display }}</h2>
-        </div>
-    {% endfor %}
+    <table>
+        <thead>
+            <tr>
+                <th>Band Name</th>
+                <th>Rating</th>
+                <th>Genre</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for band in object_list %}
+            <tr>
+                <td><a href="{% url 'band' band.pk %}">{{ band.band_name }}</a></td>
+                <td>{{ band.get_rating_display }}</td>
+                <td>{{ band.get_genre_display }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
 {% endblock content %}

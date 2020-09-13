@@ -1,11 +1,11 @@
 {% extends 'base.html' %}
 {% block content %}
-<div>
-    <h2>{{ object.band_name }}</h2>
-    <p>{{ object.get_rating_display }}</p>
-    <p>{{ object.get_genre_display }}</p>
-    <p>{{ object.description }}</p>
-    <p>{{ object.sounds_like }}</p>
-</div>
-<a href="{% url 'update_band' object.pk %}">Update Band</a> | <a href="{% url 'delete_band' object.pk %}">Delete Band</a>
+
+<h2>{{ object.band_name }}</h2>
+<p>Rating: {{ object.get_rating_display }}</p>
+<p>Genre: {{ object.get_genre_display }}</p>
+<p>Description: {{ object.description }}</p>
+<p>Sounds Like: {{ object.sounds_like }}</p>
+<a href="{% url 'update_band' object.pk %}">Update Band</a> <a href="{% url 'delete_band' object.pk %}">Delete Band</a>
+
 {% endblock content %}
