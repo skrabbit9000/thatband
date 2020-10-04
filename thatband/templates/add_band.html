@@ -1,9 +1,14 @@
 {% extends 'base.html' %}
+{% load crispy_forms_tags %}
 {% block content %}
-<h1>Add A Band Review</h1>
-<form action="" method="post">{% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="Add" />
-</form>
+<div class="row justify-content-center">
+    <div class="column">
+        <h1>Add A Band Review</h1>
+        <form action="" method="post">{% csrf_token %}
+            {{ form|crispy}}
+            <input class="btn btn-primary" type="submit" value="Add" />
+        </form>
+    </div>
+</div>
 {% endblock content %}
 

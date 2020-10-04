@@ -8,20 +8,39 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
     <link rel="stylesheet" href="{% static 'css/thatband.css' %}" />
 
+ <link href="https://fonts.googleapis.com/css2?family=Cute+Font&display=swap" rel="stylesheet" /> 
+
     <title>That Band</title>
 </head>
     <body>
-        <div class="row">
-            <div class="w-30 mx-auto"> 
-                <h1><a href="{% url 'home' %}">That Band</a></h1>
-                {% if view.template_name != 'add_band.html' %}
-                    <a href="{% url 'add_band' %}">Add Band</a>
-                {% endif %}
+        <div class="container">
+            <nav class="navbar navbar-light bg-custom-1 navbar-expand-sm mt-3">
+                <a href="{% url 'home' %}"><span id="logo">That Band</span></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-list-2" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbar-list-2">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'add_band' %}">Add Band</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="">Bands by Genre</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="">Bands by Rating</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="">About</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
                 {% block content %}
                 {% endblock content %}
-            </div>
-        </div>
 
+        </div>
             <!-- JS, Popper.js, and jQuery -->
             <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
             <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>

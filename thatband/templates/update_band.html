@@ -1,9 +1,14 @@
 {% extends 'base.html' %}
 
+{% load crispy_forms_tags %}
 {% block content %}
-    <h1>Update Band - {{ object.band_name }}</h1>
-    <form action="" method="post">{% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit" value="Update" />
-    </form>
+<div class="row justify-content-center">
+    <div class="column">
+        <h1>Update Band - {{ object.band_name }}</h1>
+        <form action="" method="post">{% csrf_token %}
+            {{ form|crispy }}
+            <input type="submit" class="btn btn-primary" value="Update" />
+        </form>
+    </div>
+</div>
 {% endblock content %}
